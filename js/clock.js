@@ -1,3 +1,12 @@
+function init(){
+    second();
+
+    setInterval(
+      'second()',
+      1000
+    );
+}
+
 function rotate_hand(id, percent){
     document.getElementById(id).style.transform =
       'translatex(-50%) '
@@ -47,7 +56,4 @@ function two_digits(value){
     return value;
 }
 
-setInterval(
-  'second()',
-  1000
-);
+window.onload = init;
