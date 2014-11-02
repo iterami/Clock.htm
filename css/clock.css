@@ -1,0 +1,27 @@
+body{
+    background: #000;
+    color: #aaa;
+    font-family: sans-serif;
+    text-align: center;
+}
+.hand{
+    background: #777;
+    border: 1px solid #fff;
+    height: 10px;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform-origin: left;
+}
+#hours-hand{
+    margin-left: 50px;
+    width: 100px;
+}
+#minutes-hand{
+    margin-left: 75px;
+    width: 150px;
+}
+#seconds-hand{
+    margin-left: 100px;
+    width: 200px;
+}
