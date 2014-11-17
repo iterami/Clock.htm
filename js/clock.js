@@ -26,7 +26,10 @@ function second(){
       + ':'
       + two_digits(date.getMinutes())
       + ':'
-      + two_digits(date.getSeconds());
+      + two_digits(date.getSeconds())
+      + ' ('
+      + (date.getTimezoneOffset() / -60)
+      + ')';
 
     document.getElementById('time').innerHTML = date_display;
 
