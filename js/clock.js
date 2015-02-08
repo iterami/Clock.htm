@@ -53,7 +53,7 @@ function two_digits(value){
 window.onload = function(){
     second();
 
-    setInterval(
+    window.setInterval(
       'second()',
       1000
     );
