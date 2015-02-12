@@ -44,10 +44,9 @@ function second(){
 }
 
 function two_digits(value){
-    if(value.toString().length < 2){
-        value = '0' + value;
-    }
-    return value;
+    return value.toString().length < 2
+      ? '0' + value
+      : value;
 }
 
 window.onload = function(){
