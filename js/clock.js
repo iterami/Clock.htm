@@ -1,3 +1,5 @@
+'use strict';
+
 function rotate_hand(id, percent){
     document.getElementById(id).style.transform =
       'translatex(-50%) '
