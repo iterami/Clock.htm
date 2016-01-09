@@ -3,7 +3,7 @@
 function rotate_hand(id, percent){
     document.getElementById(id).style.transform =
       'translatex(-50%) '
-      + 'rotate(' + (-90 + 360 * percent) + 'deg)';
+      + 'rotate(' + (360 * percent - 90) + 'deg)';
 }
 
 function second(){
