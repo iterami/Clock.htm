@@ -55,7 +55,7 @@ window.onload = function(){
     second();
 
     window.setInterval(
-      'second()',
+      second,
       1000
     );
 };
