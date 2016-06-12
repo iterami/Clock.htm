@@ -31,17 +31,20 @@ function second(){
         hours -= 12;
     }
 
+    hours = hours / 12;
+    var minutes = date.getMinutes() / 60;
+    var seconds = date.getSeconds() / 60;
     rotate_hand(
       'hours-hand',
-      hours / 12
+      hours + minutes / 12
     );
     rotate_hand(
       'minutes-hand',
-      date.getMinutes() / 60
+      minutes + seconds / 60
     );
     rotate_hand(
       'seconds-hand',
-      date.getSeconds() / 60
+      seconds
     );
 }
 
