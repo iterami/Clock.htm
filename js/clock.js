@@ -8,6 +8,10 @@ function rotate_hand(id, percent){
 
 function second(){
     var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+
     var date_display =
       date.getFullYear()
       + '-'
@@ -15,25 +19,23 @@ function second(){
       + '-'
       + two_digits(date.getDate())
       + ' '
-      + two_digits(date.getHours())
+      + two_digits(hours)
       + ':'
-      + two_digits(date.getMinutes())
+      + two_digits(minutes)
       + ':'
-      + two_digits(date.getSeconds())
+      + two_digits(seconds)
       + ' ('
       + (date.getTimezoneOffset() / -60)
       + ')';
-
     document.getElementById('time').innerHTML = date_display;
 
-    var hours = date.getHours();
     if(hours > 11){
         hours -= 12;
     }
-
     hours = hours / 12;
-    var minutes = date.getMinutes() / 60;
-    var seconds = date.getSeconds() / 60;
+    minutes = minutes / 60;
+    seconds = seconds / 60;
+
     rotate_hand(
       'hours-hand',
       hours + minutes / 12
