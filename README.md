@@ -1,4 +1,5 @@
 iterami/Clock.htm
 -----------------
 
-JavaScript rotating div clock tool.
+Requires:
+* [iterami/common](https://github.com/iterami/common)
