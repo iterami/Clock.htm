@@ -2,8 +2,7 @@
 
 function rotate_hand(id, percent){
     document.getElementById(id).style.transform =
-      'translatex(-50%) '
-      + 'rotate(' + (360 * percent - 90) + 'deg)';
+      'rotate(' + (360 * percent - 90) + 'deg)';
 }
 
 function second(){
@@ -36,6 +35,22 @@ function second(){
 
 window.onload = function(){
     second();
+
+    // Setup hands.
+    var hands = [
+      'hours-hand',
+      'minutes-hand',
+      'seconds-hand',
+    ];
+    for(var hand in hands){
+        document.getElementById(hands[hand]).style.background = '#' + core_random_hex();
+        document.getElementById(hands[hand]).style.height = '10px';
+        document.getElementById(hands[hand]).style.left = '50%';
+        document.getElementById(hands[hand]).style.position = 'fixed';
+        document.getElementById(hands[hand]).style.top = '50%';
+        document.getElementById(hands[hand]).style.transformOrigin = 'left';
+        document.getElementById(hands[hand]).style.width = (hand * 100 + 100) + 'px';
+    }
 
     window.setInterval(
       second,
