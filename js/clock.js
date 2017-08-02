@@ -14,13 +14,14 @@ function repo_init(){
       'seconds-hand',
     ];
     for(var hand in hands){
-        document.getElementById(hands[hand]).style.background = '#' + core_random_hex();
-        document.getElementById(hands[hand]).style.height = '10px';
-        document.getElementById(hands[hand]).style.left = '50%';
-        document.getElementById(hands[hand]).style.position = 'fixed';
-        document.getElementById(hands[hand]).style.top = '50%';
-        document.getElementById(hands[hand]).style.transformOrigin = 'left';
-        document.getElementById(hands[hand]).style.width = (hand * 100 + 100) + 'px';
+        var hand_element = document.getElementById(hands[hand]);
+        hand_element.style.background = '#' + core_random_hex();
+        hand_element.style.height = '10px';
+        hand_element.style.left = '50%';
+        hand_element.style.position = 'fixed';
+        hand_element.style.top = '50%';
+        hand_element.style.transformOrigin = 'left';
+        hand_element.style.width = (hand * 100 + 100) + 'px';
     }
 
     window.setInterval(
