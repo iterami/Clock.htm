@@ -24,8 +24,8 @@ function repo_init(){
         hand_element.style.width = (hand * 100 + 100) + 'px';
     }
 
-    window.setInterval(
-      second,
-      1000
-    );
+    core_interval_modify({
+      'interval': 1000,
+      'todo': second,
+    });
 }
