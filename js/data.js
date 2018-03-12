@@ -8,7 +8,7 @@ function rotate_hand(id, percent){
 function second(){
     var date = core_timestamp_to_date();
 
-    document.getElementById('time').innerHTML = core_format_date({
+    document.getElementById('time').innerHTML = core_time_format({
       'date': date,
     });
 
