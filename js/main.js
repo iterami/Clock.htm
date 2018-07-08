@@ -8,13 +8,13 @@ function repo_init(){
     second();
 
     // Setup hands.
-    var hands = [
+    let hands = [
       'hours-hand',
       'minutes-hand',
       'seconds-hand',
     ];
-    for(var hand in hands){
-        var hand_element = document.getElementById(hands[hand]);
+    for(let hand in hands){
+        let hand_element = document.getElementById(hands[hand]);
         hand_element.style.background = '#' + core_random_hex();
         hand_element.style.height = '10px';
         hand_element.style.left = '50%';
