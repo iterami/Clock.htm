@@ -7,7 +7,6 @@ function repo_init(){
 
     second();
 
-    // Setup hands.
     const hands = [
       'hours-hand',
       'minutes-hand',
