@@ -14,7 +14,7 @@ function repo_init(){
     ];
     for(const hand in hands){
         const hand_element = document.getElementById(hands[hand]);
-        hand_element.style.background = '#' + core_random_hex();
+        hand_element.style.backgroundColor = '#' + core_random_hex();
         hand_element.style.height = '10px';
         hand_element.style.left = '350px';
         hand_element.style.position = 'fixed';
