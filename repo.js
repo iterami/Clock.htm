@@ -13,15 +13,26 @@ function repo_init(){
       'seconds-hand',
     ];
     for(const hand in hands){
-        const hand_element = document.getElementById(hands[hand]);
-        hand_element.style.backgroundColor = '#' + core_random_hex();
-        hand_element.style.height = '10px';
-        hand_element.style.left = '50%';
-        hand_element.style.position = 'fixed';
-        hand_element.style.top = '350px';
-        hand_element.style.transformOrigin = 'left';
-        hand_element.style.width = (hand * 100 + 100) + 'px';
+        const element = document.getElementById(hands[hand]);
+        element.style.backgroundColor = '#' + core_random_hex();
+        element.style.border = '1px solid #000';
+        element.style.height = '10px';
+        element.style.left = '50%';
+        element.style.position = 'fixed';
+        element.style.top = '400px';
+        element.style.transformOrigin = 'left';
+        element.style.width = (hand * 100 + 100) + 'px';
     }
+
+    const face = document.getElementById('face');
+    face.style.backgroundColor = '#' + core_random_hex();
+    face.style.borderRadius = '300px';
+    face.style.height = '600px';
+    face.style.left = '50%';
+    face.style.marginLeft = '-300px';
+    face.style.position = 'fixed';
+    face.style.top = '105px';
+    face.style.width = '600px';
 
     core_interval_modify({
       'id': 'clock',
