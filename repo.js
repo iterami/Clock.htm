@@ -13,26 +13,26 @@ function repo_init(){
       'seconds-hand',
     ];
     for(const hand in hands){
-        const element = document.getElementById(hands[hand]);
-        element.style.backgroundColor = '#' + core_random_hex();
-        element.style.border = '1px solid #000';
-        element.style.height = '10px';
-        element.style.left = '50%';
-        element.style.position = 'fixed';
-        element.style.top = '400px';
-        element.style.transformOrigin = 'left';
-        element.style.width = (hand * 100 + 100) + 'px';
+        const style = document.getElementById(hands[hand]).style;
+        style.backgroundColor = '#' + core_random_hex();
+        style.border = '1px solid #000';
+        style.height = '10px';
+        style.left = '50%';
+        style.position = 'fixed';
+        style.top = '400px';
+        style.transformOrigin = 'left';
+        style.width = (hand * 100 + 100) + 'px';
     }
 
-    const face = document.getElementById('face');
-    face.style.backgroundColor = '#' + core_random_hex();
-    face.style.borderRadius = '300px';
-    face.style.height = '600px';
-    face.style.left = '50%';
-    face.style.marginLeft = '-300px';
-    face.style.position = 'fixed';
-    face.style.top = '105px';
-    face.style.width = '600px';
+    const style = document.getElementById('face').style;
+    style.backgroundColor = '#' + core_random_hex();
+    style.borderRadius = '300px';
+    style.height = '600px';
+    style.left = '50%';
+    style.marginLeft = '-300px';
+    style.position = 'fixed';
+    style.top = '105px';
+    style.width = '600px';
 
     core_interval_modify({
       'id': 'clock',
