@@ -3,6 +3,12 @@
 function repo_init(){
     core_repo_init({
       'title': 'Clock.htm',
+      'ui-elements': [
+        'hours-hand',
+        'minutes-hand',
+        'seconds-hand',
+        'time',
+      ],
     });
 
     second();
@@ -13,7 +19,7 @@ function repo_init(){
       'seconds-hand',
     ];
     for(const hand in hands){
-        const style = document.getElementById(hands[hand]).style;
+        const style = core_elements[hands[hand]].style;
         style.backgroundColor = '#' + core_random_hex();
         style.border = '1px solid #000';
         style.height = '10px';
@@ -43,14 +49,14 @@ function repo_init(){
 }
 
 function rotate_hand(id, percent){
-    document.getElementById(id).style.transform =
+    core_elements[id].style.transform =
       'rotate(' + (360 * percent - 90) + 'deg)';
 }
 
 function second(){
     const date = timestamp_to_date();
 
-    document.getElementById('time').textContent = time_format({
+    core_elements['time'].textContent = time_format({
       'date': date,
     });
 
