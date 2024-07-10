@@ -1,7 +1,27 @@
 'use strict';
 
+function update_colors(){
+    const hands = [
+      'hours-hand',
+      'minutes-hand',
+      'seconds-hand',
+    ];
+    for(const hand in hands){
+        core_elements[hands[hand]].style.backgroundColor = '#' + core_random_hex();
+    }
+
+    document.getElementById('face').style.backgroundColor = '#' + core_random_hex();
+}
+
 function repo_init(){
     core_repo_init({
+      'events': {
+        'randomize': {
+          'onclick': core_repo_reset,
+        },
+      },
+      'info': '<button id=randomize type=button>Randomize Colors</button>',
+      'reset': update_colors,
       'title': 'Clock.htm',
       'ui-elements': [
         'hours-hand',
