@@ -11,6 +11,7 @@ function repo_init(){
       'reset': update_colors,
       'title': 'Clock.htm',
       'ui-elements': [
+        'face',
         'hours-hand',
         'minutes-hand',
         'seconds-hand',
@@ -37,7 +38,7 @@ function repo_init(){
         style.width = (hand * 100 + 100) + 'px';
     }
 
-    const style = document.getElementById('face').style;
+    const style = core_elements['face'].style;
     style.backgroundColor = '#' + core_random_hex();
     style.borderRadius = '300px';
     style.height = '600px';
@@ -100,5 +101,5 @@ function update_colors(){
         core_elements[hands[hand]].style.backgroundColor = '#' + core_random_hex();
     }
 
-    document.getElementById('face').style.backgroundColor = '#' + core_random_hex();
+    core_elements['face'].style.backgroundColor = '#' + core_random_hex();
 }
