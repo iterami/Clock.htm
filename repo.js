@@ -1,18 +1,5 @@
 'use strict';
 
-function update_colors(){
-    const hands = [
-      'hours-hand',
-      'minutes-hand',
-      'seconds-hand',
-    ];
-    for(const hand in hands){
-        core_elements[hands[hand]].style.backgroundColor = '#' + core_random_hex();
-    }
-
-    document.getElementById('face').style.backgroundColor = '#' + core_random_hex();
-}
-
 function repo_init(){
     core_repo_init({
       'events': {
@@ -76,9 +63,11 @@ function rotate_hand(id, percent){
 function second(){
     const date = timestamp_to_date();
 
-    core_elements['time'].textContent = time_format({
+    const formatted = time_format({
       'date': date,
     });
+    document.title = formatted;
+    core_elements['time'].textContent = formatted;
 
     if(date['hour'] > 11){
         date['hour'] -= 12;
@@ -99,4 +88,17 @@ function second(){
       'seconds-hand',
       date['second']
     );
+}
+
+function update_colors(){
+    const hands = [
+      'hours-hand',
+      'minutes-hand',
+      'seconds-hand',
+    ];
+    for(const hand in hands){
+        core_elements[hands[hand]].style.backgroundColor = '#' + core_random_hex();
+    }
+
+    document.getElementById('face').style.backgroundColor = '#' + core_random_hex();
 }
