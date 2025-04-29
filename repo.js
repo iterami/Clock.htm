@@ -42,7 +42,6 @@ function repo_init(){
         },
       },
       'info': '<button id=randomize type=button>Randomize Colors</button>',
-      'reset': randomize,
       'storage': {
         'radius': 300,
       },
