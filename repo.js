@@ -7,28 +7,6 @@ function randomize(){
       'seconds-hand',
     ];
     for(const hand in hands){
-        const style = core_elements[hands[hand]].style;
-        style.backgroundColor = '#' + core_random_hex();
-        style.border = '1px solid #000';
-        style.height = '10px';
-        style.left = '50%';
-        style.position = 'fixed';
-        style.top = (core_storage_data['radius'] + 100) + 'px';
-        style.transformOrigin = 'left';
-        style.width = (hand * (core_storage_data['radius'] / 3) + (core_storage_data['radius'] / 3)) + 'px';
-    }
-
-    const style = core_elements['face'].style;
-    style.backgroundColor = '#' + core_random_hex();
-    style.borderRadius = core_storage_data['radius'] + 'px';
-    style.height = (core_storage_data['radius'] * 2) + 'px';
-    style.left = '50%';
-    style.marginLeft = -core_storage_data['radius'] + 'px';
-    style.position = 'fixed';
-    style.top = '105px';
-    style.width = style.height;
-
-    for(const hand in hands){
         core_elements[hands[hand]].style.backgroundColor = '#' + core_random_hex();
     }
     core_elements['face'].style.backgroundColor = '#' + core_random_hex();
@@ -42,10 +20,6 @@ function repo_init(){
         },
       },
       'info': '<button id=randomize type=button>Randomize Colors</button>',
-      'storage': {
-        'radius': 300,
-      },
-      'storage-menu': '<table><tr><td><input class=mini id=radius min=1 step=any type=number><td>px Radius</table>',
       'title': 'Clock.htm',
       'ui-elements': [
         'face',
@@ -57,7 +31,9 @@ function repo_init(){
     });
 
     second();
+    resize();
     randomize();
+    globalThis.onresize = resize;
 
     core_interval_modify({
       'id': 'clock',
@@ -65,6 +41,37 @@ function repo_init(){
       'sync': true,
       'todo': second,
     });
+}
+
+function resize(){
+    const hands = [
+      'hours-hand',
+      'minutes-hand',
+      'seconds-hand',
+    ];
+    const radius = Math.min(
+      globalThis.innerWidth / 2,
+      globalThis.innerHeight / 2 - 55
+    );
+    for(const hand in hands){
+        const style = core_elements[hands[hand]].style;
+        style.border = '1px solid #000';
+        style.height = '10px';
+        style.left = '50%';
+        style.position = 'fixed';
+        style.top = (radius + 100) + 'px';
+        style.transformOrigin = 'left';
+        style.width = (hand * (radius / 3) + (radius / 3)) + 'px';
+    }
+
+    const style = core_elements['face'].style;
+    style.borderRadius = radius + 'px';
+    style.height = (radius * 2) + 'px';
+    style.left = '50%';
+    style.marginLeft = -radius + 'px';
+    style.position = 'fixed';
+    style.top = '105px';
+    style.width = style.height;
 }
 
 function rotate_hand(id, percent){
