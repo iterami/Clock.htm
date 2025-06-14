@@ -9,7 +9,7 @@ function randomize(){
     for(const hand in hands){
         core_elements[hands[hand]].style.backgroundColor = '#' + core_random_hex();
     }
-    core_elements['face'].style.backgroundColor = '#' + core_random_hex();
+    core_elements.face.style.backgroundColor = '#' + core_random_hex();
 }
 
 function repo_init(){
@@ -64,7 +64,7 @@ function resize(){
         style.width = (hand * (radius / 3) + (radius / 3)) + 'px';
     }
 
-    const style = core_elements['face'].style;
+    const style = core_elements.face.style;
     style.borderRadius = radius + 'px';
     style.height = (radius * 2) + 'px';
     style.left = '50%';
@@ -86,25 +86,25 @@ function second(){
       'date': date,
     });
     document.title = formatted;
-    core_elements['time'].textContent = formatted;
+    core_elements.time.textContent = formatted;
 
-    if(date['hour'] > 11){
-        date['hour'] -= 12;
+    if(date.hour > 11){
+        date.hour -= 12;
     }
-    date['hour'] = date['hour'] / 12;
-    date['minute'] = date['minute'] / 60;
-    date['second'] = date['second'] / 60;
+    date.hour = date.hour / 12;
+    date.minute = date.minute / 60;
+    date.second = date.second / 60;
 
     rotate_hand(
       'hours-hand',
-      date['hour'] + date['minute'] / 12
+      date.hour + date.minute / 12
     );
     rotate_hand(
       'minutes-hand',
-      date['minute'] + date['second'] / 60
+      date.minute + date.second / 60
     );
     rotate_hand(
       'seconds-hand',
-      date['second']
+      date.second
     );
 }
