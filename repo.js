@@ -21,7 +21,7 @@ function repo_init(){
       },
       'info': '<button id=randomize type=button>Randomize Colors</button>',
       'title': 'Clock.htm',
-      'ui-elements': [
+      'ui_elements': [
         'face',
         'hours-hand',
         'minutes-hand',
