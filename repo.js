@@ -37,8 +37,7 @@ function repo_init(){
 
     core_interval_modify({
       'id': 'clock',
-      'interval': 1000,
-      'sync': true,
+      'interval': -2,
       'todo': second,
     });
 }
