@@ -19,7 +19,7 @@ function repo_init(){
           'onclick': randomize,
         },
       },
-      'info': '<button id=randomize type=button>Randomize Colors</button>',
+      'info': '<button class=medium id=randomize type=button>Randomize Colors</button>',
       'title': 'Clock.htm',
       'ui_elements': [
         'face',
