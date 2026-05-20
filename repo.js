@@ -2,9 +2,9 @@
 
 function randomize(){
     const hands = [
-      'hours-hand',
-      'minutes-hand',
-      'seconds-hand',
+      'hours_hand',
+      'minutes_hand',
+      'seconds_hand',
     ];
     for(const hand in hands){
         core_elements[hands[hand]].style.backgroundColor = '#' + core_random_hex();
@@ -23,9 +23,9 @@ function repo_init(){
       'title': 'Clock.htm',
       'ui_elements': [
         'face',
-        'hours-hand',
-        'minutes-hand',
-        'seconds-hand',
+        'hours_hand',
+        'minutes_hand',
+        'seconds_hand',
         'time',
       ],
     });
@@ -44,9 +44,9 @@ function repo_init(){
 
 function resize(){
     const hands = [
-      'hours-hand',
-      'minutes-hand',
-      'seconds-hand',
+      'hours_hand',
+      'minutes_hand',
+      'seconds_hand',
     ];
     const radius = Math.min(
       globalThis.innerWidth / 2,
@@ -54,7 +54,7 @@ function resize(){
     );
     for(const hand in hands){
         const style = core_elements[hands[hand]].style;
-        style.border = '1px solid #000';
+        style.border = '2px solid #000';
         style.height = '10px';
         style.left = '50%';
         style.position = 'fixed';
@@ -95,15 +95,15 @@ function second(){
     date.second = date.second / 60;
 
     rotate_hand(
-      'hours-hand',
+      'hours_hand',
       date.hour + date.minute / 12
     );
     rotate_hand(
-      'minutes-hand',
+      'minutes_hand',
       date.minute + date.second / 60
     );
     rotate_hand(
-      'seconds-hand',
+      'seconds_hand',
       date.second
     );
 }
